@@ -32,7 +32,7 @@ if RUBY_PLATFORM.match?(/darwin/)
 end
 
 # make libstemmer_c. unless we're cross-compiling.
-unless RUBY_PLATFORM.match?(/i386-mingw32/)
+unless RUBY_PLATFORM.match?(/(i386|x64)-mingw32/)
   system "cd #{LIBSTEMMER}; #{make} libstemmer.o; cd #{ROOT};"
   exit unless $? == 0
 end
